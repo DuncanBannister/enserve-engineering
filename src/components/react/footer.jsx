@@ -1,4 +1,4 @@
-"use client";
+
 
 import { Button, Input } from "@relume_io/relume-ui";
 import React, { useState } from "react";
@@ -26,10 +26,10 @@ const useForm = () => {
   };
 };
 
-export function Footer5() {
+export function Footer() {
   const formState = useForm();
   return (
-    <footer id="relume" className="px-[5%] py-12 md:py-18 lg:py-20">
+    <footer id="relume" className="px-[5%] py-12 md:py-18 lg:py-20 bg-midnight text-white">
       <div className="container">
         <div className="rb-12 mb-12 block items-start justify-between md:mb-18 lg:mb-20 lg:flex">
           <div className="rb-6 mb-6 lg:mb-0">

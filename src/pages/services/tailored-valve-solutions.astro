@@ -1,0 +1,217 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// React page components - maintaining exact order from index.jsx
+import { Header54 } from "../../react-pages/services/tailored-valve-solutions/components/header-54";
+import { Layout12 } from "../../react-pages/services/tailored-valve-solutions/components/layout-12";
+import { Layout197 } from "../../react-pages/services/tailored-valve-solutions/components/layout-197";
+import { Layout237 } from "../../react-pages/services/tailored-valve-solutions/components/layout-237";
+import { Cta1 } from "../../react-pages/services/tailored-valve-solutions/components/cta-01";
+
+// SEO Metadata
+const pageTitle = "Tailored Valve Solutions | Custom Valve Engineering | Enserve";
+const description = "Expert tailored valve solutions and custom engineering for specific industrial applications. Bespoke valve design, selection, and modification services across Africa's diverse industrial sectors.";
+const canonicalURL = new URL('/services/tailored-valve-solutions', Astro.site);
+const keywords = "tailored valve solutions, custom valve engineering, bespoke valve design, valve customization, application-specific valves, custom valve solutions, valve modification services, engineered valve solutions Africa";
+const ogImage = "/og-tailored-valve-solutions.jpg";
+
+// Structured Data
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Tailored Valve Solutions & Custom Engineering",
+  "alternateName": "Custom Valve Design Services",
+  "description": "Comprehensive tailored valve solutions including custom design, application-specific selection, and bespoke engineering services for unique industrial requirements",
+  "provider": {
+    "@type": "Organization",
+    "name": "Enserve Engineering Services",
+    "url": "https://enserve.co.za",
+    "logo": "https://enserve.co.za/logo.png",
+    "description": "Leading custom valve engineering and tailored solutions provider across Africa",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ZA"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/enserve"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Custom Engineering Services",
+      "availableLanguage": ["English", "Afrikaans"]
+    }
+  },
+  "serviceType": "Custom Valve Engineering Services",
+  "category": [
+    "Custom Valve Design",
+    "Valve Engineering", 
+    "Application-Specific Solutions",
+    "Bespoke Valve Services",
+    "Valve Modification",
+    "Industrial Consulting"
+  ],
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "Africa"
+    },
+    {
+      "@type": "Place",
+      "name": "South Africa"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Tailored Valve Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Custom Valve Design & Engineering",
+          "description": "Complete custom valve design from concept to manufacturing, tailored to specific application requirements and operating conditions",
+          "category": "Custom Engineering Services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Application-Specific Valve Selection",
+          "description": "Expert valve selection and specification services for unique industrial applications with challenging operating parameters",
+          "category": "Valve Consulting"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Valve Modification & Customization",
+          "description": "Professional modification and customization of existing valves to meet specific performance requirements and operational needs",
+          "category": "Valve Modification"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Bespoke Valve Solutions",
+          "description": "Complete bespoke valve solutions including design, materials selection, manufacturing oversight, and performance validation",
+          "category": "Custom Solutions"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Technical Consultation & Analysis",
+          "description": "Comprehensive technical consultation including flow analysis, material compatibility assessment, and performance optimization",
+          "category": "Engineering Consulting"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Prototype Development & Testing",
+          "description": "Custom prototype development with comprehensive testing and validation to ensure optimal performance before full implementation",
+          "category": "Product Development"
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "businessFunction": "https://schema.org/Sell",
+    "itemCondition": "https://schema.org/NewCondition",
+    "priceRange": "Contact for custom quote"
+  },
+  "audience": [
+    {
+      "@type": "BusinessAudience",
+      "audienceType": "Oil & Gas Industry"
+    },
+    {
+      "@type": "BusinessAudience", 
+      "audienceType": "Chemical Processing Plants"
+    },
+    {
+      "@type": "BusinessAudience",
+      "audienceType": "Mining & Minerals Processing"
+    },
+    {
+      "@type": "BusinessAudience",
+      "audienceType": "Power Generation"
+    },
+    {
+      "@type": "BusinessAudience",
+      "audienceType": "Water & Wastewater Treatment"
+    },
+    {
+      "@type": "BusinessAudience",
+      "audienceType": "Pharmaceutical & Food Processing"
+    }
+  ],
+  "serviceOutput": "Custom-engineered valve solutions with guaranteed performance specifications",
+  "hoursAvailable": {
+    "@type": "OpeningHoursSpecification",
+    "description": "Consultation and emergency design services available 24/7"
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Engineering Standards",
+      "value": "API, ASME, ANSI, ISO, DIN, BS standards compliance"
+    },
+    {
+      "@type": "PropertyValue", 
+      "name": "Materials Expertise",
+      "value": "Carbon steel, stainless steel, exotic alloys, non-metallic materials"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Design Capabilities",
+      "value": "CAD design, FEA analysis, CFD modeling, material selection optimization"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Pressure Ratings",
+      "value": "Vacuum to 10,000+ PSI custom pressure ratings"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Temperature Range",
+      "value": "Cryogenic to high-temperature applications (-200°C to +800°C)"
+    }
+  ],
+  "potentialAction": {
+    "@type": "ContactAction",
+    "target": "https://enserve.co.za/contact",
+    "name": "Request Custom Valve Solution Quote"
+  }
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={description}
+  canonicalURL={canonicalURL}
+  keywords={keywords}
+  image={ogImage}
+  type="website"
+  structuredData={structuredData}
+>
+  <main id="main-content" class="flex flex-col min-h-screen">
+      <!-- Hero section with CTA - critical above-fold interactive content -->
+      <Header54 client:load />
+      
+      <!-- Content sections - progressive enhancement, hydrate when visible -->
+      <Layout12 client:visible />
+      <Layout197 client:visible />
+      <Layout237 client:visible />
+      
+      <!-- CTA section - important for conversions, hydrate when visible -->
+      <Cta1 client:visible />
+  </main>
+</Layout>

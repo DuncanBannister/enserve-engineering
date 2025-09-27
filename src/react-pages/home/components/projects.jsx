@@ -1,4 +1,4 @@
-"use client";
+
 
 import { Badge, Button } from "@relume_io/relume-ui";
 import React from "react";

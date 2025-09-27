@@ -1,18 +1,87 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
 
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import Page from '../react-pages/home/index.jsx';
+import Layout from '../layouts/Layout.astro';
+
+
+// React page components
+import { Header5 } from "../react-pages/home/components/header-05";
+import { Commitment } from "../react-pages/home/components/commitment";
+import { Logo2 } from "../react-pages/home/components/logo-02";
+import { Services } from "../react-pages/home/components/services";
+import { Support } from "../react-pages/home/components/support";
+import { Projects } from "../react-pages/home/components/projects";
+import { Cta27 } from "../react-pages/home/components/cta-27";
+
+// SEO Metadata
+const pageTitle = "Complete Valve Solutions for Africa | Enserve Engineering";
+const description = "Leading valve supply, refurbishment, and LDAR services across Africa. Quality engineering solutions for industrial applications with 20+ years expertise.";
+const canonicalURL = new URL('/', Astro.site);
+const keywords = "valve solutions, industrial valves, LDAR services, valve refurbishment, Africa, engineering";
+const ogImage = "/og-home.jpg";
+const type = "website";
+
+// Structured Data
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Enserve Engineering Services",
+  "url": "https://enserve.co.za",
+  "logo": "https://enserve.co.za/logo.png",
+  "description": description,
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "ZA"
+  },
+  "sameAs": [
+    "https://linkedin.com/company/enserve"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Valve Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Valve Supply",
+          "description": "Quality valve supply from leading global manufacturers"
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Valve Refurbishment",
+          "description": "Expert refurbishment services to extend valve life"
+        }
+      }
+    ]
+  }
+};
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		
-		<Page />
+<Layout 
+  title={pageTitle}
+  description={description}
+  canonicalURL={canonicalURL}
+  keywords={keywords}
+  image={ogImage}
+  type={type}
+  structuredData={structuredData}
+>  
+  <main id="main-content" class="flex flex-col min-h-screen">
+    <Header5 />
+    <Commitment />
+    <Logo2 />
+    <Services client:visible />
+    <Support />
+    <Projects client:visible />
+    <Cta27 />
+  </main>
+</Layout>
 
-	</body>
-</html>
+
+
+
+
+

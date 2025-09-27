@@ -1,0 +1,141 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// React page components
+import { Content1 } from "../../react-pages/services/valve-refurbishment-&-repair/components/content-01";
+import { Content1_1 } from "../../react-pages/services/valve-refurbishment-&-repair/components/content-01_1";
+import { Content2 } from "../../react-pages/services/valve-refurbishment-&-repair/components/content-02";
+import { Layout249 } from "../../react-pages/services/valve-refurbishment-&-repair/components/layout-249";
+import { Layout90 } from "../../react-pages/services/valve-refurbishment-&-repair/components/layout-90";
+import { Testimonial7 } from "../../react-pages/services/valve-refurbishment-&-repair/components/testimonial-07";
+import { Cta19 } from "../../react-pages/services/valve-refurbishment-&-repair/components/cta-19";
+import { Cta27 } from "../../react-pages/services/valve-refurbishment-&-repair/components/cta-27";
+
+
+// SEO Metadata
+const pageTitle = "Valve Refurbishment & Repair Services | Extend Valve Life | Enserve";
+const description = "Expert valve refurbishment and repair services to extend valve life and reduce replacement costs. Professional restoration, testing, and certification across Africa.";
+const canonicalURL = new URL('/services/valve-refurbishment-and-repair', Astro.site);
+const keywords = "valve refurbishment, valve repair, valve restoration, valve reconditioning, valve rebuilding, valve maintenance, industrial valve repair, valve testing, valve certification Africa";
+const ogImage = "/og-valve-refurbishment.jpg";
+
+// Structured Data
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Valve Refurbishment & Repair Services",
+  "description": "Comprehensive valve refurbishment and repair services to restore valve performance, extend operational life, and reduce replacement costs for industrial applications",
+  "provider": {
+    "@type": "Organization",
+    "name": "Enserve Engineering Services",
+    "url": "https://enserve.co.za",
+    "logo": "https://enserve.co.za/logo.png",
+    "description": "Leading valve refurbishment and repair specialists across Africa",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ZA"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/enserve"
+    ]
+  },
+  "serviceType": "Valve Refurbishment & Repair",
+  "category": "Maintenance & Repair Services",
+  "areaServed": {
+    "@type": "Place",
+    "name": "Africa"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Valve Refurbishment Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Complete Valve Refurbishment",
+          "description": "Full valve restoration including disassembly, cleaning, component replacement, and testing",
+          "category": "Refurbishment Services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Valve Component Repair",
+          "description": "Specialized repair of valve seats, stems, actuators, and other critical components",
+          "category": "Component Repair"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Valve Testing & Certification",
+          "description": "Comprehensive testing and certification to industry standards",
+          "category": "Testing Services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergency Valve Repair",
+          "description": "Rapid repair services to minimize downtime and restore operations",
+          "category": "Emergency Repair"
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "businessFunction": "https://schema.org/Sell",
+    "warranty": {
+      "@type": "WarrantyPromise",
+      "durationOfWarranty": "P12M"
+    }
+  },
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Industrial Manufacturing Companies"
+  },
+  "serviceOutput": "Refurbished valves with extended operational life and certified performance",
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Cost Savings",
+      "value": "Up to 70% compared to new valve replacement"
+    },
+    {
+      "@type": "PropertyValue", 
+      "name": "Turnaround Time",
+      "value": "Standard 2-3 weeks, emergency services available"
+    }
+  ]
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={description}
+  canonicalURL={canonicalURL}
+  keywords={keywords}
+  image={ogImage}
+  type="website"
+  structuredData={structuredData}
+>
+  <main id="main-content" class="flex flex-col min-h-screen">
+     <Layout90 client:load />
+     <Cta27 client:visible />
+
+      <!-- Content sections - can lazy load when visible -->
+      <Content1 client:visible />
+      <Content2 client:visible />
+      <Content1_1 client:visible />
+      <Layout249 client:visible />
+      <Testimonial7 client:visible />
+      <Cta19 client:visible />
+      
+  </main>
+</Layout>

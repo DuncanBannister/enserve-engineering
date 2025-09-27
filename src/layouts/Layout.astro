@@ -1,0 +1,78 @@
+---
+import { Navbar } from '../components/react/navbar';
+import { Footer } from '../components/react/footer';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalURL: URL;
+  image?: string;
+  keywords?: string;
+  type?: 'website' | 'article' | 'product';
+  structuredData?: object;
+}
+const { title, description, canonicalURL, image, keywords, type, structuredData } = Astro.props;
+
+// Ensure absolute URL for social media
+const absoluteImage = image?.startsWith('http') ? image : new URL(image ?? '', Astro.site).href;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+     <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <link rel="canonical" href={canonicalURL} />
+    
+   <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={type} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={absoluteImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Enserve Engineering" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={canonicalURL} />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={absoluteImage} />
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Enserve Engineering" />
+  <meta name="language" content="en" />
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  
+  <!-- Sitemap -->
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  
+  <!-- Performance Optimization -->
+  <!-- <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//d22po4pjz3o32e.cloudfront.net" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+  
+  <!-- Structured Data -->
+  {structuredData && (
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  )}
+  </head>
+  <body>
+    <Navbar client:load />
+    <slot />
+    <Footer client:visible />
+  </body>
+</html>

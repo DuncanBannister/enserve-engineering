@@ -1,0 +1,120 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+import { Header49 } from "../../react-pages/products/control-valves/components/header-49";
+import { Layout4 } from "../../react-pages/products/control-valves/components/layout-04";
+import { Cta36 } from "../../react-pages/products/control-valves/components/cta-36"; 
+import { Layout351 } from "../../react-pages/products/control-valves/components/layout-351";
+import { Cta27 } from "../../react-pages/products/control-valves/components/cta-27";
+
+// SEO Metadata
+const pageTitle = "Control Valves | Larner Johnson Flow Control Solutions | Enserve Engineering";
+const description = "Advanced control valves engineered for precision flow regulation and management. Featuring Larner Johnson valves for optimal industrial process control and automation.";
+const canonicalURL = new URL('/products/control-valves', Astro.site);
+const keywords = "control valves, Larner Johnson valves, flow control, industrial valves, process automation, valve solutions Africa, precision flow control";
+const ogImage = "/og-control-valves.jpg";
+
+// Structured Data
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Larner Johnson Control Valves",
+  "description": description,
+  "brand": {
+    "@type": "Brand",
+    "name": "Larner Johnson"
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "Enserve Engineering",
+    "url": "https://enserve.co.za"
+  },
+  "category": "Industrial Control Valves",
+  "productID": "control-valves",
+  "offers": {
+    "@type": "AggregateOffer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "ZAR",
+    "seller": {
+      "@type": "Organization",
+      "name": "Enserve Engineering",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "South Africa",
+          "identifier": "ZA"
+        },
+        {
+          "@type": "Country",
+          "name": "Namibia",
+          "identifier": "NA"
+        },
+        {
+          "@type": "Country",
+          "name": "Botswana",
+          "identifier": "BW"
+        },
+        {
+          "@type": "Country",
+          "name": "Mozambique",
+          "identifier": "MZ"
+        }
+      ]
+    }
+  },
+  "hasProductVariant": [
+    {
+      "@type": "ProductModel",
+      "name": "Precision Control Valves",
+      "description": "Advanced valves for precise flow regulation and control"
+    },
+    {
+      "@type": "ProductModel",
+      "name": "Process Control Valves",
+      "description": "Automated control valves for industrial process management"
+    },
+    {
+      "@type": "ProductModel",
+      "name": "Flow Management Systems",
+      "description": "Integrated valve solutions for comprehensive flow control"
+    }
+  ],
+  "applicationCategory": "Industrial Process Control",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Industrial Process Facilities"
+  },
+  "features": [
+    "Precision flow regulation",
+    "Advanced valve technology",
+    "Efficient system performance",
+    "Reduced operational costs",
+    "Adaptable industrial applications"
+  ],
+  "isSimilarTo": [
+    {
+      "@type": "Product",
+      "name": "Manual & Isolation Valves",
+      "url": "https://enserve.co.za/products/manual-and-isolation-valves"
+    }
+  ]
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={description}
+  canonicalURL={canonicalURL}
+  keywords={keywords}
+  image={ogImage}
+  type="product"
+  structuredData={structuredData}
+>
+  <main id="main-content" class="flex flex-col min-h-screen">
+    <Header49 />
+    <Layout4 client:visible />
+    <Cta36 client:visible />
+    <Layout351 client:visible />
+    <Cta27 client:idle />
+  </main>
+</Layout>

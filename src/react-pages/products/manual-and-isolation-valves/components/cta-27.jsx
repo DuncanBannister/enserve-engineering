@@ -11,11 +11,11 @@ export function Cta27() {
           Get Your Valve Solutions Today
         </h2>
         <p className="text-text-alternative md:text-md">
-          Contact us now for expert valve solutions tailored to your industrial
-          needs and challenges.
+          Contact us now for expert advice and tailored quotes for your valve
+          needs.
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:mt-8">
-          <Button title="Contact">Contact</Button>
+          <Button title="Inquire">Inquire</Button>
           <Button title="Quote" variant="secondary-alt">
             Quote
           </Button>

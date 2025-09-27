@@ -1,10 +1,10 @@
-"use client";
+
 
 import { Button } from "@relume_io/relume-ui";
 import React from "react";
 import { RxChevronRight } from "react-icons/rx";
 
-export function Support() {
+export function Layout216() {
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
@@ -17,46 +17,41 @@ export function Support() {
             />
           </div>
           <div className="order-1 md:order-2">
-            <p className="mb-3 font-semibold md:mb-4">Support</p>
+            <p className="mb-3 font-semibold md:mb-4">Reliable</p>
             <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
-              Always Here for Your Valve Needs
+              Shaw Valves: Built for Extreme Conditions
             </h2>
             <p className="mb-6 md:mb-8 md:text-md">
-              At Enserve, we offer 24/7 support to ensure your operations run
-              seamlessly. Our dedication to environmental compliance guarantees
-              that our solutions are not only effective but also sustainable.
+              Shaw Valves are engineered for durability and reliability,
+              ensuring consistent performance even in the most challenging
+              environments. Trust in their robust design to maintain flow
+              control and isolation effectively.
             </p>
-            <div className="grid grid-cols-1 gap-6 py-2 lg:grid-cols-2">
+            <div className="grid grid-cols-1 gap-6 py-2 sm:grid-cols-2">
               <div>
-                <h6 className="mb-3 text-md leading-[1.4] font-bold md:mb-4 md:text-xl">
-                  Round-the-Clock
-                </h6>
-                <p>
-                  We are always available to assist with your valve
-                  requirements.
-                </p>
+                <h3 className="mb-2 text-5xl font-bold md:text-7xl lg:text-8xl">
+                  50%
+                </h3>
+                <p>Durable solutions for demanding industrial applications.</p>
               </div>
               <div>
-                <h6 className="mb-3 text-md leading-[1.4] font-bold md:mb-4 md:text-xl">
-                  Eco-Friendly
-                </h6>
-                <p>
-                  Our services adhere to the highest environmental standards for
-                  responsible operations.
-                </p>
+                <h3 className="mb-2 text-5xl font-bold md:text-7xl lg:text-8xl">
+                  50%
+                </h3>
+                <p>Engineered for reliability in extreme conditions.</p>
               </div>
             </div>
             <div className="mt-6 flex flex-wrap gap-4 md:mt-8">
-              <Button title="Contact" variant="secondary">
-                Contact
+              <Button title="Learn More" variant="secondary">
+                Learn More
               </Button>
               <Button
-                title="Learn More"
+                title="Request"
                 variant="link"
                 size="link"
                 iconRight={<RxChevronRight />}
               >
-                Learn More
+                Request
               </Button>
             </div>
           </div>

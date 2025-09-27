@@ -1,0 +1,129 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+
+import { Header62 } from "../../react-pages/products/manual-and-isolation-valves/components/header-62";
+import { Layout4 } from "../../react-pages/products/manual-and-isolation-valves/components/layout-04";
+import { Cta36 } from "../../react-pages/products/manual-and-isolation-valves/components/cta-36";
+import { Layout216 } from "../../react-pages/products/manual-and-isolation-valves/components/layout-216";
+import { Cta27 } from "../../react-pages/products/manual-and-isolation-valves/components/cta-27";
+
+
+// SEO Metadata
+const pageTitle = "Manual & Isolation Valves | Industrial Valve Solutions | Enserve Engineering";
+const description = "High-quality manual and isolation valves for precise flow control and system isolation. Expert valve solutions for industrial applications across Africa, including ball, gate, globe, and butterfly valves.";
+const canonicalURL = new URL('/products/manual-and-isolation-valves', Astro.site);
+const keywords = "manual valves, isolation valves, ball valves, gate valves, globe valves, butterfly valves, industrial valves, valve solutions Africa";
+const ogImage = "/og-manual-valves.jpg";
+
+// Structured Data
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Manual & Isolation Valves",
+  "description": description,
+  "brand": {
+    "@type": "Brand",
+    "name": "Enserve Engineering"
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "Enserve Engineering",
+    "url": "https://enserve.co.za"
+  },
+  "category": "Industrial Valves",
+  "productID": "manual-isolation-valves",
+  "offers": {
+    "@type": "AggregateOffer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "ZAR",
+    "seller": {
+      "@type": "Organization",
+      "name": "Enserve Engineering",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "South Africa",
+          "identifier": "ZA"
+        },
+        {
+          "@type": "Country",
+          "name": "Namibia",
+          "identifier": "NA"
+        },
+        {
+          "@type": "Country",
+          "name": "Botswana",
+          "identifier": "BW"
+        },
+        {
+          "@type": "Country",
+          "name": "Mozambique",
+          "identifier": "MZ"
+        }
+      ]
+    }
+  },
+  "hasProductVariant": [
+    {
+      "@type": "ProductModel",
+      "name": "Ball Valves",
+      "description": "Full and reduced bore ball valves for efficient flow control"
+    },
+    {
+      "@type": "ProductModel",
+      "name": "Gate Valves",
+      "description": "Robust gate valves for complete system isolation"
+    },
+    {
+      "@type": "ProductModel",
+      "name": "Globe Valves",
+      "description": "Precision globe valves for accurate flow regulation"
+    },
+    {
+      "@type": "ProductModel",
+      "name": "Butterfly Valves",
+      "description": "High-performance butterfly valves for industrial applications"
+    }
+  ],
+  "applicationCategory": "Industrial Equipment",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Industrial Facilities"
+  },
+  "isSimilarTo": [
+    {
+      "@type": "Product",
+      "name": "Control Valves",
+      "url": "https://enserve.co.za/products/control-valves"
+    }
+  ]
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={description}
+  canonicalURL={canonicalURL}
+  keywords={keywords}
+  image={ogImage}
+  type="product"
+  structuredData={structuredData}
+>
+  <main id="main-content" class="flex flex-col min-h-screen">
+    {/* Static header - no client directive needed */}
+    <Header62 />
+    
+    {/* Product layouts with possible interactions - load when visible */}
+    <Layout4 client:visible />
+    
+    {/* Call-to-action with buttons - load when visible */}
+    <Cta36 client:visible />
+    
+    {/* Product layout with possible interactions - load when visible */}
+    <Layout216 client:visible />
+    
+    {/* Final call-to-action - load when idle */}
+    <Cta27 client:idle />
+  </main>
+</Layout>

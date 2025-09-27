@@ -1,11 +1,13 @@
 import type { Config } from 'tailwindcss'
+import relumeTailwindPreset from "@relume_io/relume-tailwind";
 
 export default {
-  content: [
-    "./src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte,md,mdx}",
-    "./node_modules/@relume_io/relume-ui/dist/**/*.{js,ts,jsx,tsx}"
+   content: [
+    "./node_modules/@relume_io/relume-ui/dist/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  presets: [require("@relume_io/relume-tailwind")],
+  presets: [relumeTailwindPreset],
   theme: {
     container: {
       center: true,

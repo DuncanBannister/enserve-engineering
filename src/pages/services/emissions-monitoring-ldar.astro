@@ -1,0 +1,176 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// React page components - maintaining exact order from index.jsx
+import { Navbar2 } from "../../react-pages/services/emission-monitoring-leak-detection-and-repair/components/navbar-02";
+import { Header54 } from "../../react-pages/services/emission-monitoring-leak-detection-and-repair/components/header-54";
+import { Layout1 } from "../../react-pages/services/emission-monitoring-leak-detection-and-repair/components/layout-01";
+import { Layout203 } from "../../react-pages/services/emission-monitoring-leak-detection-and-repair/components/layout-203";
+import { Layout1_1 } from "../../react-pages/services/emission-monitoring-leak-detection-and-repair/components/layout-01_1";
+import { Layout90 } from "../../react-pages/services/emission-monitoring-leak-detection-and-repair/components/layout-90";
+import { Layout25 } from "../../react-pages/services/emission-monitoring-leak-detection-and-repair/components/layout-25";
+import { Footer5 } from "../../react-pages/services/emission-monitoring-leak-detection-and-repair/components/footer-05";
+
+// SEO Metadata
+const pageTitle = "Emission Monitoring & LDAR Services | Environmental Compliance | Enserve";
+const description = "Professional emission monitoring and leak detection & repair (LDAR) services for environmental compliance. Expert fugitive emission management across Africa's industrial facilities.";
+const canonicalURL = new URL('/services/emission-monitoring-leak-detection-and-repair', Astro.site);
+const keywords = "emission monitoring, LDAR services, leak detection repair, fugitive emissions, environmental compliance, emission testing, air quality monitoring, industrial emissions, regulatory compliance Africa";
+const ogImage = "/og-emission-monitoring-ldar.jpg";
+
+// Structured Data
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Emission Monitoring & Leak Detection and Repair Services",
+  "description": "Comprehensive emission monitoring and LDAR services for environmental compliance and regulatory adherence across industrial facilities",
+  "provider": {
+    "@type": "Organization",
+    "name": "Enserve Engineering Services",
+    "url": "https://enserve.co.za",
+    "logo": "https://enserve.co.za/logo.png",
+    "description": "Leading environmental compliance and emission monitoring services provider across Africa",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ZA"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/enserve"
+    ]
+  },
+  "serviceType": "Environmental Compliance Services",
+  "category": ["Environmental Monitoring", "Leak Detection", "Emission Testing", "Regulatory Compliance"],
+  "areaServed": {
+    "@type": "Place",
+    "name": "Africa"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Emission Monitoring & LDAR Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Fugitive Emission Detection",
+          "description": "Advanced leak detection services using cutting-edge equipment for identifying fugitive emissions",
+          "category": "Leak Detection Services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emission Monitoring Programs",
+          "description": "Comprehensive emission monitoring and reporting for regulatory compliance",
+          "category": "Environmental Monitoring"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "LDAR Program Management",
+          "description": "Complete leak detection and repair program management and implementation",
+          "category": "Environmental Compliance"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Regulatory Compliance Reporting",
+          "description": "Detailed compliance reporting and documentation for environmental regulations",
+          "category": "Compliance Services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Air Quality Assessment",
+          "description": "Professional air quality monitoring and environmental impact assessment services",
+          "category": "Environmental Testing"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Equipment Calibration & Maintenance",
+          "description": "Specialized calibration and maintenance services for emission monitoring equipment",
+          "category": "Equipment Services"
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "businessFunction": "https://schema.org/Sell",
+    "itemCondition": "https://schema.org/NewCondition"
+  },
+  "audience": [
+    {
+      "@type": "BusinessAudience",
+      "audienceType": "Oil & Gas Industry"
+    },
+    {
+      "@type": "BusinessAudience", 
+      "audienceType": "Chemical Processing Plants"
+    },
+    {
+      "@type": "BusinessAudience",
+      "audienceType": "Manufacturing Facilities"
+    },
+    {
+      "@type": "BusinessAudience",
+      "audienceType": "Power Generation Plants"
+    }
+  ],
+  "serviceOutput": "Environmental compliance certification and emission reduction",
+  "hoursAvailable": {
+    "@type": "OpeningHoursSpecification",
+    "description": "24/7 emergency emission monitoring services available"
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Compliance Standards",
+      "value": "EPA, ISO 14001, Local Environmental Regulations"
+    },
+    {
+      "@type": "PropertyValue", 
+      "name": "Equipment Technology",
+      "value": "Advanced optical gas imaging, portable analyzers, continuous monitoring systems"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Certification",
+      "value": "Certified environmental technicians and compliance specialists"
+    }
+  ]
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={description}
+  canonicalURL={canonicalURL}
+  keywords={keywords}
+  image={ogImage}
+  type="website"
+  structuredData={structuredData}
+>
+  <main id="main-content" class="flex flex-col min-h-screen">
+      <!-- Hero section with CTA - needs immediate hydration -->
+      <Header54 client:load />
+      
+      <!-- Content sections - can lazy load when visible for performance -->
+      <Layout1 client:visible />
+      <Layout203 client:visible />
+      <Layout1_1 client:visible />
+      <Layout90 client:visible />
+      <Layout25 client:visible />
+  </main>
+</Layout>

@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// React page components
+import { Header54 } from "../../react-pages/services/on-site-services/components/header-54";
+import { Content1 } from "../../react-pages/services/on-site-services/components/content-01";
+import { Content2 } from "../../react-pages/services/on-site-services/components/content-02";
+import { Content3 } from "../../react-pages/services/on-site-services/components/content-03";
+import { Content4 } from "../../react-pages/services/on-site-services/components/content-04";
+
+import { Layout38 } from "../../react-pages/services/on-site-services/components/layout-38";
+import { Cta13 } from "../../react-pages/services/on-site-services/components/cta-13";
+import { Logo1 } from "../../react-pages/services/on-site-services/components/logo-01";
+
+
+// SEO Metadata
+const pageTitle = "On-Site Engineering Services | Field Valve Solutions | Enserve";
+const description = "Professional on-site engineering services for valve installation, maintenance, and repair. Expert field technicians delivering tailored solutions across Africa's industrial sites.";
+const canonicalURL = new URL('/services/on-site-services', Astro.site);
+const keywords = "on-site engineering, field services, valve installation, on-site maintenance, industrial field work, valve repair, site engineering, mobile valve services, field technicians Africa";
+const ogImage = "/og-on-site-services.jpg";
+
+// Structured Data
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "On-Site Engineering Services",
+  "description": "Professional on-site engineering services for valve installation, maintenance, and repair across industrial facilities in Africa",
+  "provider": {
+    "@type": "Organization",
+    "name": "Enserve Engineering Services",
+    "url": "https://enserve.co.za",
+    "logo": "https://enserve.co.za/logo.png",
+    "description": "Leading on-site valve engineering services provider across Africa",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ZA"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/enserve"
+    ]
+  },
+  "serviceType": "On-Site Engineering Services",
+  "category": "Field Services",
+  "areaServed": {
+    "@type": "Place",
+    "name": "Africa"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "On-Site Engineering Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Valve Installation Services",
+          "description": "Professional on-site valve installation by certified technicians",
+          "category": "Installation Services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergency Field Repairs",
+          "description": "24/7 emergency valve repair services at your facility",
+          "category": "Emergency Services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Preventive Maintenance",
+          "description": "Scheduled on-site maintenance to prevent valve failures",
+          "category": "Maintenance Services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "System Commissioning",
+          "description": "Complete valve system commissioning and testing services",
+          "category": "Commissioning Services"
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "businessFunction": "https://schema.org/Sell",
+    "itemCondition": "https://schema.org/NewCondition"
+  },
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Industrial Facilities"
+  },
+  "serviceOutput": "Operational valve systems with guaranteed performance",
+  "hoursAvailable": {
+    "@type": "OpeningHoursSpecification", 
+    "description": "24/7 emergency services available"
+  }
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={description}
+  canonicalURL={canonicalURL}
+  keywords={keywords}
+  image={ogImage}
+  type="website"
+  structuredData={structuredData}
+>
+  <main id="main-content" class="flex flex-col min-h-screen">
+      <!-- Hero section with CTA - needs immediate hydration -->
+      <Header54 client:load />
+      
+      <!-- Content sections - can lazy load when visible -->
+      <Content1 client:visible />
+      <Content2 client:visible />
+      <Content3 client:visible />
+      <Content4 client:visible />
+
+      <!-- Layout sections with potential interactions -->
+      
+
+
+      <Layout38 client:visible />
+      
+      <!-- CTA section - interactive element -->
+      <Cta13 client:visible />
+      
+      <!-- Logo grid - typically static display -->
+      <Logo1 />
+  </main>
+</Layout>

@@ -4,7 +4,7 @@ import React from "react";
 
 export function Logo2() {
   return (
-    <section id="relume" className="px-[5%] py-12 md:py-16 lg:py-20 bg-gradient-primary">
+    <section id="relume" className="px-[5%] py-12 md:py-16 lg:py-20 bg-gradient-primary text-white">
       <div className="container grid grid-cols-1 items-start justify-start gap-x-12 gap-y-8 md:grid-cols-[max-content_1fr] md:items-center md:justify-between md:gap-y-4 lg:gap-x-16">
         <h1 className="leading-[1.2] font-bold md:max-w-[16rem] md:text-md md:leading-[1.2] lg:max-w-xxs">
           Trusted by top global valve manufacturers

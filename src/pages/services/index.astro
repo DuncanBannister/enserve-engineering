@@ -1,0 +1,115 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// React page components
+import { Header54 } from "../../react-pages/services/components/header-54";
+import { Layout4 } from "../../react-pages/services/components/layout-04";
+import { Layout192 } from "../../react-pages/services/components/layout-192";
+import { Layout4_1 } from "../../react-pages/services/components/layout-04_1";
+import { Layout192_1 } from "../../react-pages/services/components/layout-192_1";
+import { Logo2 } from "../../react-pages/services/components/logo-02";
+
+// SEO Metadata
+const pageTitle = "Professional Valve Services | Expert Engineering Solutions | Enserve";
+const description = "Comprehensive valve services including supply, refurbishment, LDAR solutions, and on-site engineering. 24/7 support and environmental compliance for Africa's industrial sector.";
+const canonicalURL = new URL('/services', Astro.site);
+const keywords = "valve services, valve refurbishment, LDAR services, on-site engineering, valve supply, leak detection repair, valve testing, industrial services Africa";
+const ogImage = "/og-services.jpg";
+
+// Structured Data
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Professional Valve Engineering Services",
+  "description": "Comprehensive valve services including supply, refurbishment, LDAR solutions, and on-site engineering for industrial applications across Africa",
+  "provider": {
+    "@type": "Organization",
+    "name": "Enserve Engineering Services",
+    "url": "https://enserve.co.za",
+    "logo": "https://enserve.co.za/logo.png",
+    "description": "Leading valve engineering services provider across Africa",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ZA"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/enserve"
+    ]
+  },
+  "serviceType": "Industrial Valve Services",
+  "areaServed": {
+    "@type": "Place",
+    "name": "Africa"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Valve Engineering Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Valve Supply",
+          "description": "Quality valve supply from leading global manufacturers for all industrial applications",
+          "category": "Industrial Supply"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Valve Refurbishment",
+          "description": "Expert refurbishment services to extend the life of your valves and reduce operational costs",
+          "category": "Maintenance & Repair"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Leak Detection and Repair (LDAR)",
+          "description": "Advanced LDAR solutions using E-Soft software for accurate detection and environmental compliance",
+          "category": "Environmental Services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "On-Site Engineering",
+          "description": "Professional on-site engineering services tailored to your specific operational requirements",
+          "category": "Field Services"
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "businessFunction": "https://schema.org/Sell"
+  },
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Industrial Companies"
+  }
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={description}
+  canonicalURL={canonicalURL}
+  keywords={keywords}
+  image={ogImage}
+  type="website"
+  structuredData={structuredData}
+>
+  <main id="main-content" class="flex flex-col min-h-screen">
+      <Header54 client:load/>
+      <Layout4 client:visible />
+      <Layout192 client:visible />
+      <Layout4_1 client:visible />
+      <Layout192_1 client:visible />
+      <Logo2 />
+  </main>
+</Layout>

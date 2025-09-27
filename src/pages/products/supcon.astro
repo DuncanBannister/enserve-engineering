@@ -1,0 +1,132 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+import { Header50 } from "../../react-pages/products/supcon/components/header-50";
+import { Layout196 } from "../../react-pages/products/supcon/components/layout-196";
+import { Layout5 } from "../../react-pages/products/supcon/components/layout-05";
+import { Layout196_1 } from "../../react-pages/products/supcon/components/layout-196_1";
+import { Layout5_1 } from "../../react-pages/products/supcon/components/layout-05_1";
+import { Comparison7 } from "../../react-pages/products/supcon/components/comparison-07";
+import { Blog42 } from "../../react-pages/products/supcon/components/blog-42";
+import { Layout245 } from "../../react-pages/products/supcon/components/layout-245";
+import { Layout330 } from "../../react-pages/products/supcon/components/layout-330";
+import { Logo1 } from "../../react-pages/products/supcon/components/logo-01";
+import { Cta13 } from "../../react-pages/products/supcon/components/cta-13";
+
+// SEO Metadata
+const pageTitle = "Control Valves | Larner Johnson Flow Control Solutions | Enserve Engineering";
+const description = "Advanced control valves engineered for precision flow regulation and management. Featuring Larner Johnson valves for optimal industrial process control and automation.";
+const canonicalURL = new URL('/products/control-valves', Astro.site);
+const keywords = "control valves, Larner Johnson valves, flow control, industrial valves, process automation, valve solutions Africa, precision flow control";
+const ogImage = "/og-control-valves.jpg";
+
+// Structured Data
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Larner Johnson Control Valves",
+  "description": description,
+  "brand": {
+    "@type": "Brand",
+    "name": "Larner Johnson"
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "Enserve Engineering",
+    "url": "https://enserve.co.za"
+  },
+  "category": "Industrial Control Valves",
+  "productID": "control-valves",
+  "offers": {
+    "@type": "AggregateOffer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "ZAR",
+    "seller": {
+      "@type": "Organization",
+      "name": "Enserve Engineering",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "South Africa",
+          "identifier": "ZA"
+        },
+        {
+          "@type": "Country",
+          "name": "Namibia",
+          "identifier": "NA"
+        },
+        {
+          "@type": "Country",
+          "name": "Botswana",
+          "identifier": "BW"
+        },
+        {
+          "@type": "Country",
+          "name": "Mozambique",
+          "identifier": "MZ"
+        }
+      ]
+    }
+  },
+  "hasProductVariant": [
+    {
+      "@type": "ProductModel",
+      "name": "Precision Control Valves",
+      "description": "Advanced valves for precise flow regulation and control"
+    },
+    {
+      "@type": "ProductModel",
+      "name": "Process Control Valves",
+      "description": "Automated control valves for industrial process management"
+    },
+    {
+      "@type": "ProductModel",
+      "name": "Flow Management Systems",
+      "description": "Integrated valve solutions for comprehensive flow control"
+    }
+  ],
+  "applicationCategory": "Industrial Process Control",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Industrial Process Facilities"
+  },
+  "features": [
+    "Precision flow regulation",
+    "Advanced valve technology",
+    "Efficient system performance",
+    "Reduced operational costs",
+    "Adaptable industrial applications"
+  ],
+  "isSimilarTo": [
+    {
+      "@type": "Product",
+      "name": "Manual & Isolation Valves",
+      "url": "https://enserve.co.za/products/manual-and-isolation-valves"
+    }
+  ]
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={description}
+  canonicalURL={canonicalURL}
+  keywords={keywords}
+  image={ogImage}
+  type="product"
+  structuredData={structuredData}
+>
+  <main id="main-content" class="flex flex-col min-h-screen">
+    <Header50 />
+    <Layout196 />
+    <Layout5 />
+    <Layout196_1 />
+    <Layout5_1 />
+    <Comparison7 />
+    <Blog42 />
+    <Layout245 />
+    <Layout330 />
+    <Logo1 />
+    <Cta13 />
+  </main>
+</Layout>

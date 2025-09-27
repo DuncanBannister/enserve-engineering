@@ -1,0 +1,97 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// React page components
+import { Header50 } from "../../react-pages/products/components/header-50";
+import { Layout3 } from "../../react-pages/products/components/layout-03";
+import { Logo4 } from "../../react-pages/products/components/logo-04";
+import { Layout10 } from "../../react-pages/products/components/layout-10";
+import { Layout192 } from "../../react-pages/products/components/layout-192";
+import { Layout4 } from "../../react-pages/products/components/layout-04";
+import { Cta25 } from "../../react-pages/products/components/cta-25";
+
+// SEO Metadata
+const pageTitle = "Industrial Valve Solutions | Product Range | Enserve Engineering";
+const description = "Comprehensive range of industrial valves and automation solutions. Featuring manual valves, control valves, and Supcon automation systems for Africa's industrial sector.";
+const canonicalURL = new URL('/products', Astro.site);
+const keywords = "industrial valves, valve solutions, control valves, manual valves, isolation valves, Supcon automation, valve products, engineering solutions Africa";
+const ogImage = "/og-products.jpg";
+
+// Structured Data
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Product",
+        "name": "Manual & Isolation Valves",
+        "description": "High-quality manual and isolation valves for precise flow control and system isolation",
+        "url": "https://enserve.co.za/products/manual-and-isolation-valves",
+        "category": "Industrial Valves"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Product",
+        "name": "Control Valves",
+        "description": "Advanced control valves for automated process control and regulation systems",
+        "url": "https://enserve.co.za/products/control-valves",
+        "category": "Industrial Valves"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Product",
+        "name": "Supcon Automation Solutions",
+        "description": "Industry-leading automation and control solutions for optimal performance",
+        "url": "https://enserve.co.za/products/supcon",
+        "category": "Industrial Automation"
+      }
+    }
+  ],
+  "numberOfItems": 3,
+  "provider": {
+    "@type": "Organization",
+    "name": "Enserve Engineering",
+    "url": "https://enserve.co.za"
+  }
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={description}
+  canonicalURL={canonicalURL}
+  keywords={keywords}
+  image={ogImage}
+  type="website"
+  structuredData={structuredData}
+>
+  <main id="main-content" class="flex flex-col min-h-screen">
+    {/* Static header - no client directive needed */}
+    <Header50 />
+    
+    {/* Product category showcase - static content */}
+    <Layout3 />
+    
+    {/* Partner logos - static display */}
+    <Logo4 />
+    
+    {/* Interactive product layouts - load when visible */}
+    <Layout10 client:visible />
+    <Layout192 client:visible />
+    
+    {/* Product features - load when visible if interactive */}
+    <Layout4 client:visible />
+    
+    {/* Call to action - load when visible */}
+    <Cta25 client:visible />
+  </main>
+</Layout>
